@@ -12,9 +12,8 @@ const app = express();
 
 const PORT = process.env.PORT || 8000;
 
-app.use(cors());
+app.use(cors()); // Apply CORS middleware here
 app.use(express.json());
-// app.use(bodyParser());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(todoRoutes);
