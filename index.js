@@ -9,10 +9,11 @@ const todoRoutes = require("./routes/todos.route");
 const authRoutes = require("./routes/auth.route");
 
 const app = express();
+app.use(express.json());
 
 const PORT = process.env.PORT || 8000;
 
-app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(todoRoutes);
