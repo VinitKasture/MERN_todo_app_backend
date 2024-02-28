@@ -7,7 +7,11 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_SERVER_URL,
+  })
+);
 
 const todoRoutes = require("./routes/todos.route");
 const authRoutes = require("./routes/auth.route");
