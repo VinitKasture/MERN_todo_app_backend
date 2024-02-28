@@ -8,7 +8,7 @@ const { createToken } = require("../middleware/jwt.middleware");
 
 const login = async function (req, res, next) {
   try {
-    // const { email, password } = req.body;
+    const { email, password } = req.body;
 
     const user = await User.findOne({ email });
 
